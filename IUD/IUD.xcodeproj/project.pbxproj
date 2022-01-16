@@ -10,10 +10,14 @@
 		323E10C904F59DA8561B3CE4 /* Pods_IUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50F8A26EB578073578B53567 /* Pods_IUD.framework */; };
 		C307693E27943F7000CF2A7C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C307693D27943F7000CF2A7C /* AppDelegate.swift */; };
 		C307694027943F7000CF2A7C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C307693F27943F7000CF2A7C /* SceneDelegate.swift */; };
-		C307694227943F7000CF2A7C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C307694127943F7000CF2A7C /* ViewController.swift */; };
+		C307694227943F7000CF2A7C /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C307694127943F7000CF2A7C /* UserViewController.swift */; };
 		C307694527943F7000CF2A7C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C307694327943F7000CF2A7C /* Main.storyboard */; };
 		C307694727943F7200CF2A7C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C307694627943F7200CF2A7C /* Assets.xcassets */; };
 		C307694A27943F7200CF2A7C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C307694827943F7200CF2A7C /* LaunchScreen.storyboard */; };
+		C30769582794438500CF2A7C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30769572794438500CF2A7C /* User.swift */; };
+		C331ADF427947E83001ED37D /* DateFormatter+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C331ADF327947E83001ED37D /* DateFormatter+.swift */; };
+		C331ADF627948647001ED37D /* UserDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C331ADF527948647001ED37D /* UserDetailViewController.swift */; };
+		C331ADF9279497B3001ED37D /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C331ADF8279497B3001ED37D /* APIManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,11 +27,15 @@
 		C307693A27943F7000CF2A7C /* IUD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IUD.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C307693D27943F7000CF2A7C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C307693F27943F7000CF2A7C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		C307694127943F7000CF2A7C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C307694127943F7000CF2A7C /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
 		C307694427943F7000CF2A7C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C307694627943F7200CF2A7C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C307694927943F7200CF2A7C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C307694B27943F7200CF2A7C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C30769572794438500CF2A7C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		C331ADF327947E83001ED37D /* DateFormatter+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+.swift"; sourceTree = "<group>"; };
+		C331ADF527948647001ED37D /* UserDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailViewController.swift; sourceTree = "<group>"; };
+		C331ADF8279497B3001ED37D /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,7 +56,6 @@
 				825FAC673910420AEA563B8F /* Pods-IUD.debug.xcconfig */,
 				18678A88ED2CD75E99F4F664 /* Pods-IUD.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -81,15 +88,75 @@
 		C307693C27943F7000CF2A7C /* IUD */ = {
 			isa = PBXGroup;
 			children = (
-				C307693D27943F7000CF2A7C /* AppDelegate.swift */,
-				C307693F27943F7000CF2A7C /* SceneDelegate.swift */,
-				C307694127943F7000CF2A7C /* ViewController.swift */,
-				C307694327943F7000CF2A7C /* Main.storyboard */,
-				C307694627943F7200CF2A7C /* Assets.xcassets */,
-				C307694827943F7200CF2A7C /* LaunchScreen.storyboard */,
-				C307694B27943F7200CF2A7C /* Info.plist */,
+				C30769522794432B00CF2A7C /* AppDelegate */,
+				C30769532794433900CF2A7C /* Controllers */,
+				C331ADF227947E73001ED37D /* Extensions */,
+				C30769542794434400CF2A7C /* Models */,
+				C331ADF72794979E001ED37D /* Networking */,
+				C30769552794434800CF2A7C /* Resources */,
+				C30769562794435200CF2A7C /* Views */,
 			);
 			path = IUD;
+			sourceTree = "<group>";
+		};
+		C30769522794432B00CF2A7C /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				C307693D27943F7000CF2A7C /* AppDelegate.swift */,
+				C307693F27943F7000CF2A7C /* SceneDelegate.swift */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		C30769532794433900CF2A7C /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C307694127943F7000CF2A7C /* UserViewController.swift */,
+				C331ADF527948647001ED37D /* UserDetailViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		C30769542794434400CF2A7C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C30769572794438500CF2A7C /* User.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C30769552794434800CF2A7C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C307694627943F7200CF2A7C /* Assets.xcassets */,
+				C307694B27943F7200CF2A7C /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		C30769562794435200CF2A7C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C307694327943F7000CF2A7C /* Main.storyboard */,
+				C307694827943F7200CF2A7C /* LaunchScreen.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C331ADF227947E73001ED37D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C331ADF327947E83001ED37D /* DateFormatter+.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		C331ADF72794979E001ED37D /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				C331ADF8279497B3001ED37D /* APIManager.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -207,9 +274,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C307694227943F7000CF2A7C /* ViewController.swift in Sources */,
+				C331ADF627948647001ED37D /* UserDetailViewController.swift in Sources */,
+				C30769582794438500CF2A7C /* User.swift in Sources */,
+				C307694227943F7000CF2A7C /* UserViewController.swift in Sources */,
 				C307693E27943F7000CF2A7C /* AppDelegate.swift in Sources */,
 				C307694027943F7000CF2A7C /* SceneDelegate.swift in Sources */,
+				C331ADF427947E83001ED37D /* DateFormatter+.swift in Sources */,
+				C331ADF9279497B3001ED37D /* APIManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -361,7 +432,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 363AQBNMLH;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = IUD/Info.plist;
+				INFOPLIST_FILE = IUD/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -390,7 +461,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 363AQBNMLH;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = IUD/Info.plist;
+				INFOPLIST_FILE = IUD/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
